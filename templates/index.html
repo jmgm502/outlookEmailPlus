@@ -1043,13 +1043,14 @@
                         <div class="card-title">🎱 号池管理</div>
                     </div>
                     <div class="card-body" id="poolAdminContainer">
-                        <div class="pool-admin-filters" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1rem;">
-                            <select id="poolAdminInPoolFilter" class="form-select" style="min-width:120px;" onchange="loadPoolAdmin(true)">
+                        <!-- 筛选栏：横向紧凑排列 -->
+                        <div class="pool-admin-toolbar" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:0.8rem;">
+                            <select id="poolAdminInPoolFilter" class="form-select" style="width:auto;min-width:90px;" onchange="loadPoolAdmin(true)">
                                 <option value="all">全部</option>
                                 <option value="true">池内</option>
                                 <option value="false">池外</option>
                             </select>
-                            <select id="poolAdminStatusFilter" class="form-select" style="min-width:140px;" onchange="loadPoolAdmin(true)">
+                            <select id="poolAdminStatusFilter" class="form-select" style="width:auto;min-width:110px;" onchange="loadPoolAdmin(true)">
                                 <option value="">所有状态</option>
                                 <option value="available">可用</option>
                                 <option value="claimed">占用中</option>
@@ -1058,22 +1059,29 @@
                                 <option value="frozen">冻结</option>
                                 <option value="retired">退休</option>
                             </select>
-                            <select id="poolAdminProviderFilter" class="form-select" style="min-width:120px;" onchange="loadPoolAdmin(true)">
+                            <select id="poolAdminProviderFilter" class="form-select" style="width:auto;min-width:100px;" onchange="loadPoolAdmin(true)">
                                 <option value="">所有类型</option>
                                 <option value="outlook">Outlook</option>
                                 <option value="imap">IMAP</option>
                                 <option value="custom">Custom</option>
                                 <option value="cloudflare_temp_mail">CF Temp Mail</option>
                             </select>
-                            <select id="poolAdminGroupFilter" class="form-select" style="min-width:140px;" onchange="loadPoolAdmin(true)">
+                            <select id="poolAdminGroupFilter" class="form-select" style="width:auto;min-width:110px;" onchange="loadPoolAdmin(true)">
                                 <option value="">所有分组</option>
                             </select>
-                            <input type="text" id="poolAdminSearch" class="form-input" placeholder="搜索邮箱 / 备注 / 域名…" style="min-width:200px;" oninput="debouncePoolAdminSearch()">
+                            <input type="text" id="poolAdminSearch" class="form-input" placeholder="搜索邮箱…" style="width:180px;min-width:140px;" oninput="debouncePoolAdminSearch()">
+                            <div style="flex:1;"></div>
+                            <!-- 批量操作区 -->
+                            <div id="poolAdminBatchBar" style="display:none;align-items:center;gap:8px;">
+                                <span id="poolAdminBatchCount" style="font-size:0.78rem;color:var(--text-muted);"></span>
+                                <button class="btn btn-sm btn-primary" onclick="batchPoolAdminAction('move_into_pool')">批量移入</button>
+                                <button class="btn btn-sm btn-ghost" onclick="batchPoolAdminAction('move_out_of_pool')">批量移出</button>
+                            </div>
                         </div>
                         <div id="poolAdminTableWrapper">
                             <div class="loading-overlay"><span class="spinner"></span> 加载中…</div>
                         </div>
-                        <div class="pool-admin-pagination" id="poolAdminPagination" style="margin-top:1rem;"></div>
+                        <div class="pool-admin-pagination" id="poolAdminPagination" style="margin-top:0.8rem;"></div>
                     </div>
                 </div>
             </div>

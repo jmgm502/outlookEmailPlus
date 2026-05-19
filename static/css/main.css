@@ -2435,3 +2435,36 @@ tr:hover td { background: rgba(184,92,56,0.04); }
     display: block;
   }
 }
+
+/* ===== Pool Admin Table Enhancement (Issue #60) ===== */
+.data-table--pool-admin th {
+  background: rgba(15, 23, 42, 0.04);
+  padding: 8px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.data-table--pool-admin tbody td {
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.data-table--pool-admin tbody tr:hover td {
+  background: rgba(184, 92, 56, 0.04);
+}
+
+.pool-admin-toolbar select,
+.pool-admin-toolbar input {
+  font-size: 0.8rem;
+  height: 32px;
+}
+
+.pool-admin-toolbar .form-select {
+  padding: 4px 24px 4px 8px;
+}
+
+.pool-admin-toolbar .form-input {
+  padding: 4px 10px;
+}

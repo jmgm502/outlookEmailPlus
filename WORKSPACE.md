@@ -188,6 +188,26 @@
 
 ---
 
+#### 274H. 发布 v2.6.0 GitHub Release
+
+**时间**：2026-05-19
+
+**操作**：
+1. 版本号升级：`2.5.0` → `2.6.0`（`outlook_web/__init__.py`）
+2. 更新 `docs/DEVLOG.md` 新增 v2.6.0 章节
+3. 语法检查通过
+4. 推送到远程：`origin/main` + `origin/Buggithubissue` 均已更新到 `912b32a`
+5. 创建 GitHub Release：`gh release create v2.6.0`
+6. Release URL: https://github.com/ZeroPointSix/outlookEmailPlus/releases/tag/v2.6.0
+
+**版本号**：v2.6.0
+**发布内容**：Issue #60 号池管理 MVP + i18n 完善
+**测试结果**：1454 tests, 0 failures, 11 skipped
+
+**状态**：✅ 发布完成
+
+---
+
 #### 273. 图片分析请求 — 模型能力限制诊断与文档同步（无代码改动）
 
 **操作背景**：

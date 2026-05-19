@@ -168,7 +168,23 @@
 - `templates/index.html` — 筛选栏布局调整
 - `test_pool_admin_ui.py`、`tests/test_pool_admin_ui_v2.py` — Playwright 测试（未跟踪）
 
-**状态**：提交完成，等待用户确认是否需要提交剩余文件或 push
+**状态**：提交完成，等待用户确认是否需要 push 或处理剩余文件
+
+---
+
+#### 274G. 本地合并 main 分支
+
+**时间**：2026-05-19
+
+**操作**：
+- `git fetch origin` — 获取远程最新
+- 确认 main 是 Buggithubissue 的祖先（fast-forward possible）
+- `git update-ref refs/heads/main` — 本地 main 快进到 Buggithubissue HEAD (`79bbe85`)
+- 两个分支现在指向同一 commit
+
+**注意**：main 被另一个 worktree (`E:/hushaokang/Data-code/outlookEmail`) 锁定，无法 `git checkout main`，但 `update-ref` 可直接更新 ref
+
+**状态**：本地 main 已合并，尚未 push 到 origin
 
 ---
 
